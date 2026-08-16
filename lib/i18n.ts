@@ -1,0 +1,1 @@
+﻿export type Language = "en" | "es" | "ar"; export const translations = { en: { title: "Leave Tracker", dir: "ltr", langToggle: "Español / العربية" }, es: { title: "Rastreador de Vacaciones", dir: "ltr", langToggle: "English / العربية" }, ar: { title: "متابع الإجازات", dir: "rtl", langToggle: "English / Español" } };

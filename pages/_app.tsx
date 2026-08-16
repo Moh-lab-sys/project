@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app';
 import { useState, useEffect } from 'react';
-import { Language, translations } from '@/lib/i18n';
+import { Language, translations } from '../lib/i18n';
 import Head from 'next/head';
 
 export default function App({ Component, pageProps }: AppProps) {
