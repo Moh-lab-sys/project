@@ -46,6 +46,11 @@ export default function AdminDashboard({ t }: { t: any }) {
     setAllSubmissions(combined);
   };
 
+  const getReportUrl = (path: string) => {
+    const { data } = supabase.storage.from('medical-reports').getPublicUrl(path);
+    return data.publicUrl;
+  };
+
   const handleCreateUser = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -105,7 +110,7 @@ export default function AdminDashboard({ t }: { t: any }) {
                 )}
                 {sub.medical_report_url && (
                   <a
-                    href={`${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/medical-reports/${sub.medical_report_url}`}
+                    href={getReportUrl(sub.medical_report_url)}
                     target="_blank"
                     rel="noreferrer"
                     className="ml-2 text-xs text-blue-600 underline"
